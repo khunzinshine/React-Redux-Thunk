@@ -1,0 +1,35 @@
+.ui.secondary.inverted.pointing.menu.tabmenu {
+  height: 45px;
+  border: 0 solid transparent;
+  background-color: #d2c6c6;
+  color: #ffff;
+  margin-bottom: 25px;
+  overflow: auto hidden;
+}
+
+.ui.secondary.inverted.pointing.menu.tabmenu .active.item {
+  background-color: #eee;
+  color: #db2828;
+}
+
+.ui.secondary.inverted.pointing.menu.tabmenu .active.item,
+.ui.menu .active.item {
+  border-color: #db2828 !important;
+  color: #db2828 !important;
+  height: 47px;
+}
+.ui.secondary.pointing.menu.tabmenu .item {
+  border-bottom-color: transparent;
+  border-bottom-style: solid;
+  border-radius: 0;
+  align-self: flex-end;
+  margin: 0 0 -2px;
+  padding: 0.85714286em 1.14285714em;
+  border-bottom-width: 2px;
+  /* transition: color .1s ease; */
+  font-size: 15px;
+}
+
+body ::-webkit-scrollbar {
+  height: 7px;
+}

@@ -1,0 +1,22 @@
+.ui.attached.tabular.menu {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    height: 45px;
+}
+
+.ui.menu.wrapped .item {
+    border-radius: 3px !important;
+    border: 1px #cabebf solid !important; 
+    margin: 0 2px 2px 0 !important;
+}
+  
+.ui.menu.wrapped .active.item {
+    background-color: #ba242d;
+    color: white;
+}
+
+.ui.menu.wrapped .active.item, .ui.menu .active.item {
+    border-color: #db2828!important;
+    color: #ffff!important;
+}

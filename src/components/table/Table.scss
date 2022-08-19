@@ -1,0 +1,55 @@
+.ui.checkbox .box,
+.ui.checkbox label {
+  cursor: auto;
+  position: relative;
+  display: block;
+  padding-left: 1.85714em;
+  outline: 0;
+  font-size: 12px;
+}
+
+.ui.dropdown .menu > .item {
+  position: relative;
+  cursor: pointer;
+  display: block;
+  border: none;
+  height: auto;
+  text-align: left;
+  border-top: none;
+  line-height: 1em;
+  color: 'black';
+  padding: 7px 7px !important;
+  font-size: 15px;
+  text-transform: none;
+  font-weight: 200;
+  box-shadow: none;
+  -webkit-touch-callout: none;
+}
+
+.btn_gp {
+  text-align: center;
+}
+
+.ui.inverted.dimmer .ui.loader:before {
+  border-color: #df3618;
+}
+
+.ui.inverted.dimmer .ui.loader:after {
+  border-color: #f0aba3 transparent transparent;
+}
+
+.ui.inverted.dimmer .ui.loader {
+  color: #df3618;
+}
+
+.scroll-table {
+  overflow-x: scroll;
+  margin-top: 12px;
+}
+
+.select-text {
+  font-size: 18px;
+  padding: 10px 0 10px 0;
+  color: #474543;
+  font-style: normal;
+}

@@ -1,0 +1,45 @@
+//@import '../../scss/common';
+
+.ui.card {
+  width: 100% !important;
+}
+
+.ui.segment {
+  border-radius: 2px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 20px 0 rgba(185, 188, 210, 0.2);
+  border: solid 1px #e8e8ec;
+}
+
+.fixed-footer {
+  /* margin: -1rem 0 50px 0 !important;
+    padding: 1.5rem 1rem !important;
+    background-color: #ba242d;
+    height: 20px;
+    color: #ffffff; */
+  // background-color: #ba242d;
+  height: 30px;
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+  margin-top: 0 !important;
+}
+
+.top-footer {
+  background-color: rgb(221, 10, 10) !important;
+  // margin-bottom: 0 !important;
+}
+
+/* .one.column.row {
+    text-align: center !important;
+  } */
+
+.text-muted {
+  text-align: right;
+  color: #ffffff;
+}
+
+.link {
+  text-align: right;
+  color: #ffffff;
+}

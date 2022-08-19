@@ -1,0 +1,74 @@
+.auth-main {
+  height: 100vh;
+  background-color: #eaeaea;
+}
+
+.auth-content {
+  left: 50%;
+  padding: 10vmin;
+  position: fixed;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.auth-card {
+  background-color: #ffffff;
+  box-shadow: 3px 3px 8px #888888;
+  border-radius: 4px;
+  width: 400px;
+  min-width: 300px;
+  text-align: center;
+}
+.auth-logo {
+  width: 118px;
+  margin-bottom: -10px;
+}
+.auth-form {
+  margin-top: 35px;
+}
+.auth-input-field {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.ui.button.btn_login {
+  color: #f7f7f7;
+  background-color: #ba242d;
+  font-size: 15px;
+}
+
+.ui.message {
+  font-size: 1em;
+  padding-top: 10px;
+}
+
+.ui.input{
+  height: 40px;
+}
+
+.forgot-message{
+ height: 38px;
+ a{
+   color: #ba242d;
+ }
+}
+
+.swal2-styled.swal2-confirm {
+  border: 0;
+  border-radius: .25em;
+  background: initial;
+  background-color: #ba242d;
+  color: #fff;
+  font-size: 1em;
+}
+
+::selection {
+  background-color: #ba242d;
+  color: rgba(0,0,0,.87);
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}

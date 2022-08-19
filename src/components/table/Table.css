@@ -1,0 +1,14 @@
+.TblContainer{
+    margin: 100px;
+}
+
+.AddButton{
+display: flex;
+justify-content: flex-end;
+}
+
+.statusButton{
+    border-radius: 7px;
+    color: aliceblue;
+    text-align: center;
+}
