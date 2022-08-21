@@ -43,9 +43,9 @@ const TextIcon = (props) => {
 
 TextIcon.propTypes = {
   name: PropTypes.string.isRequired,
-  hideText: PropTypes.bool.isRequired,
+  hideText: PropTypes.bool,
   color: PropTypes.string,
-  show: PropTypes.bool.isRequired,
+  show: PropTypes.bool,
 };
 
 export default TextIcon;
