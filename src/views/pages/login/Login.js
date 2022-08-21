@@ -118,7 +118,7 @@ const Login = () => {
               isSubmitting,
               isValid,
             }) => (
-              <Form size="large" loading={isSubmitting} onSubmit={handleSubmit}>
+              <Form size="small" loading={isSubmitting} onSubmit={handleSubmit}>
                 <Segment
                   raised
                   style={{
@@ -145,10 +145,11 @@ const Login = () => {
                     value={values.username}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    valid={touched.username && !errors.username}
-                    invalid={touched.username && !!errors.username}
+                    valid={touched.username ? !errors.username : undefined}
+                    invalid={touched.username ? !!errors.username : undefined}
                     error={errors.username !== undefined}
-                    placeholder="Username - admin"
+                    placeholder="username - admin"
+                    autoComplete="current-username"
                     className="auth-input-field"
                   />
                   <Form.Input
@@ -160,7 +161,7 @@ const Login = () => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     error={errors.password !== undefined}
-                    placeholder="Password - 123456"
+                    placeholder="password - 123456"
                     autoComplete="current-password"
                     icon={
                       <Icon

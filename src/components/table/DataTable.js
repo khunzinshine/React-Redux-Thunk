@@ -203,68 +203,77 @@ const DataTable = ({
   };
 
   const defaultRenderBodyRow = (data, rowIndex) => {
-    return fields.map(({ key }, index) => {
-      if (key === "index") {
-        return (
-          <Table.Cell key={index}>
-            {itemsPerPage && currentPage
-              ? rowIndex + 1 + itemsPerPage * (currentPage - 1)
-              : rowIndex + 1}
-          </Table.Cell>
-        );
-      } else if (key === "actions") {
-        return (
-          <Table.Cell key={index}>
-            <Button.Group basic size="small" className="btn_gp">
-              {actionList &&
-                actionList
-                  .filter((a) => a.name !== "export")
-                  .map((btn, index) => (
-                    <Popup
-                      trigger={
-                        <Button
-                          icon
-                          key={index}
-                          onClick={() => btn.action(data)}
-                        >
-                          <Icon name={btn.icon} />
-                        </Button>
-                      }
-                    >
-                      {btn.label}
-                    </Popup>
-                  ))}
-              {actionList &&
-                actionList
-                  .filter((a) => a.name === "export")
-                  .map((btn, index) => (
-                    <Popup
-                      trigger={
-                        <Button icon key={index}>
-                          <a href={data.reportUrl} download>
+    return {
+      key: data.id || rowIndex + 1,
+      cells: fields.map(({ key }, index) => {
+        if (key === "index") {
+          return (
+            <Table.Cell key={index}>
+              {itemsPerPage && currentPage
+                ? rowIndex + 1 + itemsPerPage * (currentPage - 1)
+                : rowIndex + 1}
+            </Table.Cell>
+          );
+        } else if (key === "actions") {
+          return (
+            <Table.Cell key={index}>
+              <Button.Group basic size="small" className="btn_gp">
+                {actionList &&
+                  actionList
+                    .filter((a) => a.name !== "export")
+                    .map((btn, index) => (
+                      <Popup
+                        key={index}
+                        trigger={
+                          <Button
+                            icon
+                            key={index}
+                            onClick={() => btn.action(data)}
+                          >
                             <Icon name={btn.icon} />
-                          </a>
-                        </Button>
-                      }
-                    >
-                      {btn.label}
-                    </Popup>
-                  ))}
-            </Button.Group>
-          </Table.Cell>
-        );
-      } else {
-        let checkDate = moment(data[key], moment.ISO_8601, true).isValid();
-
-        return (
-          <Table.Cell key={index}>
-            {checkDate
-              ? moment(new Date(data[key])).format("YYYY-MM-DD HH:mm")
-              : data[key]}
-          </Table.Cell>
-        );
-      }
-    });
+                          </Button>
+                        }
+                      >
+                        {btn.label}
+                      </Popup>
+                    ))}
+                {actionList &&
+                  actionList
+                    .filter((a) => a.name === "export")
+                    .map((btn, index) => (
+                      <Popup
+                        key={index}
+                        trigger={
+                          <Button icon key={index}>
+                            <a href={data.reportUrl} download>
+                              <Icon name={btn.icon} />
+                            </a>
+                          </Button>
+                        }
+                      >
+                        {btn.label}
+                      </Popup>
+                    ))}
+              </Button.Group>
+            </Table.Cell>
+          );
+        } else {
+          let checkDate = moment(data[key], moment.ISO_8601, true).isValid();
+          let headerName = columns.filter((c) => c.key === key)[0];
+          return (
+            <>
+              <Table.Cell key={index}>
+                {data[key] && data[key].length > 6 && checkDate
+                  ? moment(new Date(data[key])).format("YYYY-MM-DD HH:mm")
+                  : headerName?.format
+                  ? headerName.format(data, index)
+                  : data[key]}
+              </Table.Cell>
+            </>
+          );
+        }
+      }),
+    };
   };
 
   const renderRow = renderBodyRow || defaultRenderBodyRow;

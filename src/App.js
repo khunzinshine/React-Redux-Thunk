@@ -13,10 +13,10 @@ import Page404 from "./views/pages/page404/Page404";
 import Spinner from "./assets/images/loading.gif";
 
 const loading = (
-  <div class="ui center aligned container">
+  <div className="ui center aligned container">
     <img
       alt="spinner"
-      class="ui centered image"
+      className="ui centered image"
       src={Spinner}
       style={{ opacity: 0.2 }}
     />

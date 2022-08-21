@@ -35,6 +35,8 @@ const AuthorList = () => {
   const { hits, nbPages } = data || {};
   const { loading } = useSelector(system);
 
+  console.log("hitsxxx", hits);
+
   useEffect(() => {
     if (error !== null) {
       toast.addToast("ERROR", error, "error");
