@@ -1,7 +1,6 @@
 import React from "react";
 import { SemanticToastContainer, toast } from "react-semantic-toasts";
 import "react-semantic-toasts/styles/react-semantic-alert.css";
-
 import PropTypes from "prop-types";
 
 const Toaster = ({ title, body, type, show, color }) => {
@@ -9,8 +8,8 @@ const Toaster = ({ title, body, type, show, color }) => {
     if (show) {
       toast({
         type: type,
-        icon: "undefined",
-        size: "mini",
+        icon: "earlybirds",
+        size: "small",
         title: title,
         description: body,
         time: 5000,
@@ -24,8 +23,8 @@ const Toaster = ({ title, body, type, show, color }) => {
 };
 
 Toaster.propTypes = {
-  title: PropTypes.string.isRequired,
-  body: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  body: PropTypes.string,
 };
 
 export default Toaster;
