@@ -1,47 +1,29 @@
-import React, { useContext, useState } from 'react';
-import { Dropdown, Icon, Button } from 'semantic-ui-react';
-import { AuthContext } from '../../context/authContext';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from "react";
+import { Dropdown, Icon } from "semantic-ui-react";
+import { AuthContext } from "../../context/authContext";
 
 const trigger = (
-  <span>
-    <Icon name="user" /> User
-  </span>
+  <Icon.Group style={{ color: "#fff" }}>
+    <Icon size="big" name="circle outline" />
+    <Icon name="user" />
+  </Icon.Group>
 );
 
 const options = [
   {
-    key: 'user',
+    key: "user",
     text: (
       <span>
         Signed in as <strong>user</strong>
       </span>
     ),
     disabled: true,
-    value: 'user',
+    value: "user",
   },
   {
-    key: 'profile',
-    text: (
-      <Button
-        style={{ background: 'none' }}
-        as={Link}
-        to="/admin/user/getProfile"
-      >
-        <Icon name="user circle"></Icon>Your profile
-      </Button>
-    ),
-    value: 'profile',
-  },
-  {
-    key: 'settings',
-    text: <Icon name="setting"> Settings</Icon>,
-    value: 'settings',
-  },
-  {
-    key: 'sign-out',
+    key: "sign-out",
     text: <Icon name="log out"> Log Out</Icon>,
-    value: 'sign-out',
+    value: "sign-out",
   },
 ];
 
@@ -50,7 +32,7 @@ const HeaderDropdown = () => {
   const [value, setValue] = useState();
 
   const handleChange = (e, data) => {
-    if (data.value === 'sign-out') {
+    if (data.value === "sign-out") {
       auth.logout();
     }
     setValue(data.value);
@@ -61,6 +43,7 @@ const HeaderDropdown = () => {
       options={options}
       trigger={trigger}
       value={value}
+      icon={null}
       onClick={handleChange}
       onChange={(event, data) => {
         handleChange(event, data);

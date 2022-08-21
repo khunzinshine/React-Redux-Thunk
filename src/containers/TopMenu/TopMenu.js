@@ -31,12 +31,12 @@ const TopMenu = () => {
                 name="bars"
               />
             </Icon.Group>
-            React - Thunk
+            React with Redux Toolkit
           </Header>
         </Menu.Item>
       </Menu.Menu>
       <Menu.Menu position="right">
-        <Menu.Item>
+        <Menu.Item className="menu-search">
           <TopSearch />
         </Menu.Item>
         <Menu.Item name="setting" value={activeItem} onClick={handleItemClick}>
