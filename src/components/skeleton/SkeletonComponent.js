@@ -14,13 +14,13 @@ const SkeletonComponent = ({
     const rows = [];
     for (let index = 0; index < columnData; index++) {
       rows.push(
-        <td key={index}>
+        <Table.Cell key={index}>
           <Skeleton
             count={count}
             style={{ marginTop: "25px" }}
             height={size ? size : 35}
           />
-        </td>
+        </Table.Cell>
       );
     }
     return rows;
